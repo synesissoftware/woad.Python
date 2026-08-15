@@ -89,6 +89,7 @@ None (currently).
 
 ### Related projects
 
+* [**woad**](https://github.com/synesissoftware/woad/)
 * [**woad.Ruby**](https://github.com/synesissoftware/woad.Ruby/)
 * [**woad.Rust**](https://github.com/synesissoftware/woad.Rust/)
 
