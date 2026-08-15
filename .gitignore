@@ -1,0 +1,28 @@
+# directories (by name)
+
+/.venv/
+
+build/
+dist/
+scratch/
+
+*.egg-info/
+
+
+# directories (by pattern)
+
+
+# files (by name)
+
+.DS_Store
+
+
+# files (by pattern)
+
+*~
+*.pyc
+*.pyo
+*.swo
+*.swp
+*.tmp
+*.zip
