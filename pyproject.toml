@@ -42,7 +42,7 @@ license = { text = "BSD-3-Clause" }
 name = "woad"
 readme = "README.md"
 requires-python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*, !=3.7.*"
-version = "0.0.0"
+version = "0.0.1"
 
 [project.urls]
 "Bug Tracker" = "https://github.com/synesissoftware/woad.Python/issues"

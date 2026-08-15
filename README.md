@@ -46,12 +46,14 @@ Use via **import**:
 
 ```Python
 import woad
+
+print(woad.FG_GREEN + "ok" + woad.RESET)
 ```
 
 
 ## Components
 
-**woad.Python** currently ships the **`woad`** package and version metadata (`woad.__version__`). Colour codes, TTY/stream gating, and Windows virtual-terminal opt-in are not implemented in this 0.0.0 skeleton.
+**woad.Python** ships SGR string constants (`RESET`, `FG_*`, `BG_*`, including bright variants). TTY/stream gating and Windows virtual-terminal opt-in are not implemented yet.
 
 
 ## Project Information
