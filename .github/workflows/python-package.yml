@@ -2,7 +2,7 @@
 # the sdist/wheel on a range of Python versions.
 #
 # Created: 15th August 2026
-# Updated: 15th August 2026
+# Updated: 14th September 2026
 #
 
 name: Python package
@@ -10,10 +10,10 @@ name: Python package
 on:
   push:
     branches:
-      - boilerplate
-      - dev
-      - idiomatic
       - master
+      - dev
+      - boilerplate
+      - idiomatic
       - rc1
       - rc2
       - rc3
