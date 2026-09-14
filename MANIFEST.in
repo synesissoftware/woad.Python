@@ -1,0 +1,2 @@
+include AUTHORS.md CHANGES.md LICENSE NEWS.md README.md TODO.md
+recursive-include tests *.py
