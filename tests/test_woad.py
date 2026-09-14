@@ -7,7 +7,7 @@ class Test_woad(unittest.TestCase):
 
     def test_version(self):
 
-        self.assertEqual('0.0.1', woad.__version__)
+        self.assertEqual('0.0.2', woad.__version__)
 
     def test_RESET(self):
 
