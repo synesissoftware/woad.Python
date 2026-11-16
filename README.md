@@ -14,6 +14,7 @@ Minimal ANSI terminal colour codes, for Python
 ## Table of Contents <!-- omit in toc -->
 
 - [Introduction](#introduction)
+- [Developer Experience](#developer-experience)
 - [Installation](#installation)
 - [Components](#components)
 - [Project Information](#project-information)
@@ -32,6 +33,32 @@ Minimal ANSI terminal colour codes, for Python
 **woad** provides the smallest useful set of fixed ANSI SGR colour sequences for library authors. It is not a console or TUI framework.
 
 **woad.Python** is the **Python** implementation. It supports **Python 2.7** and **Python 3.8+**.
+
+
+## Developer Experience
+
+**Python 2.7** or **Python 3.8+** is required. The library uses the standard library only. From a checkout:
+
+```bash
+python -m unittest discover -s tests
+python examples/conditional.py
+```
+
+The smallest useful call prints a sequence only when the stream supports colour:
+
+```Python
+import sys
+
+import woad
+
+stream = sys.stdout
+green = woad.seq_for(stream, woad.FG_GREEN)
+reset = woad.seq_for(stream, woad.RESET)
+
+print(green + "ok" + reset)
+```
+
+That is [examples/conditional.py](./examples/conditional.py). Fixed sequences (`BOLD`, `BLINKING`, `FG_*`, `BG_*`) always contain the SGR bytes. `colour_policy`, `supports_colour`, and `seq_for` apply the cached environment policy. `refresh` drops that cache. A `None` sequence yields `""`.
 
 
 ## Installation
@@ -53,7 +80,7 @@ print(woad.FG_GREEN + "ok" + woad.RESET)
 
 ## Components
 
-**woad.Python** ships SGR string constants (`RESET`, `FG_*`, `BG_*`, including bright variants). TTY/stream gating and Windows virtual-terminal opt-in are not implemented yet.
+**woad.Python** ships fixed SGR sequences (`BLINKING`, `BOLD`, `RESET`, `FG_*`, `BG_*`, including bright variants) and the portable colour policy: `colour_policy`, `refresh`, `supports_colour`, and `seq_for`. On Unix a terminal supports colour when the policy is automatic and `TERM` is not `dumb`. Windows virtual-terminal mode and mintty PTY recognition are not implemented.
 
 
 ## Project Information
