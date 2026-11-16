@@ -51,18 +51,26 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    # 3.8 and 3.9 have no setup-python build for Ubuntu 26.04
+    # (ubuntu-latest). Those cells stay on ubuntu-24.04 so the 3.8 floor
+    # remains exercised.
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os:
+          - ubuntu-latest
         python-version:
-          - "3.8"
-          - "3.9"
           - "3.10"
           - "3.11"
           - "3.12"
           - "3.13"
           - "3.14"
+        include:
+          - os: ubuntu-24.04
+            python-version: "3.8"
+          - os: ubuntu-24.04
+            python-version: "3.9"
 
     steps:
     - name: Checking out code
